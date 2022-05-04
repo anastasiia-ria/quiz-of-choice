@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Form, Container, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Item } from "react-router-dom";
 
 function Header() {
 return (
@@ -12,24 +12,18 @@ return (
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav.Link>
+          <Nav.Item>
             <Link to="/">Home</Link>
-          </Nav.Link>
-          <Nav.Link onClick={}>
+          </Nav.Item>
+          <Nav.Item >
             Add Quiz
-          </Nav.Link>
-          <Nav.Link onClick={}>
+          </Nav.Item>
+          <Nav.Item >
             <Link to="/">My Quizzes</Link>
-          </Nav.Link>
-          <Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/signin">Account</Link>
-          </Nav.Link>
-          <Form onSubmit={handleSearchSubmission} className="d-flex search-bar">
-            <Form.Control type="text" placeholder="Search" className="me-2" aria-label="Search" name="search" />
-            <Button variant="outline-dark" type="submit">
-              Search
-            </Button>
-          </Form>
+          </Nav.Item>
         </Navbar.Collapse>
       </Container>
     </Navbar>
