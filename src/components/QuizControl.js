@@ -33,7 +33,9 @@ class QuizControl extends React.Component {
     if (this.state.selectedQuiz != null) {
       this.setState({
         selectedQuiz: null,
-        editing: false
+        editing: false,
+        submittedAnswer: false,
+        quiz: null
       });
     } else {
       const { dispatch } = this.props;
@@ -73,8 +75,7 @@ class QuizControl extends React.Component {
   handleSubmittingQuizScore = (quiz) => {
     this.setState({
       submittedAnswer: true,
-      selectedQuiz: null,
-      quiz: quiz
+      quiz: quiz,
     });
   }
 
@@ -118,14 +119,13 @@ class QuizControl extends React.Component {
       } else if (this.state.submittedAnswer) {
         currentlyVisibleState = <QuizResults score = {this.state.quiz.score} name = {this.state.quiz.name}/>
         buttonText = "Return to Quiz List";
-        this.state.submittedAnswer = false;
       } else if (this.state.selectedQuiz != null) {
         currentlyVisibleState = <QuizDetail quiz = {this.state.selectedQuiz} onClickingDelete = {this.handleDeletingQuiz} 
         onClickingEdit= {this.handleEditClick} handleSubmittingQuizScore= {this.handleSubmittingQuizScore} />
         buttonText = "Return to Quiz List";
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewQuizForm onNewQuizCreation={this.handleAddingNewQuizToList}/>
-        buttonText = "Return To Quiz List";
+        buttonText = "Return To Quiz List"; 
       } else {
         currentlyVisibleState = <QuizList onQuizSelection={this.handleChangingSelectedQuiz} />
         buttonText = "Add Quiz";

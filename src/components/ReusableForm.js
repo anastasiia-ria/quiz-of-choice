@@ -6,7 +6,7 @@ function ReusableForm(props) {
   const {formSubmissionHandler, buttonText, quiz} = props;
   return (
     <React.Fragment>
-      <Form onSubmit={formSubmissionHandler} className='w-50'>
+      <Form onSubmit={formSubmissionHandler} className='w-50 m-auto'>
       <Form.Group className="mb-3">
         <Form.Control type='text' name='name' placeholder='Quiz Name' defaultValue={quiz.name}/>
       </Form.Group>
