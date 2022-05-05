@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "bootstrap";
 import 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
@@ -12,6 +13,7 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 import firebase from "./firebase";
 import 'firebase/compat/auth';
+
 
 const store = createStore(rootReducer);
 

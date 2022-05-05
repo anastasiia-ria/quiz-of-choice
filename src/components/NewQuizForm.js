@@ -12,12 +12,19 @@ function NewQuizForm(props){
     props.onNewQuizCreation();
     return firestore.collection('quizzes').add(
       {
-        question1: event.target.question1.value,
-        options1: event.target.options1.value, 
-        answer1: event.target.answer1.value,
-        question1: event.target.question2.value,
-        options2: event.target.options2.value, 
-        answer2: event.target.answer2.value,
+        name: event.target.name.value, 
+        question1: event.target.question1.value, 
+        answer1: event.target.answer1.value, 
+        option1_1: event.target.option1_1.value, 
+        option1_2: event.target.option1_2.value, 
+        option1_3: event.target.option1_3.value, 
+        option1_4: event.target.option1_4.value, 
+        question2: event.target.question2.value, 
+        answer2: event.target.answer2.value, 
+        option2_1: event.target.option2_1.value, 
+        option2_2: event.target.option2_2.value, 
+        option2_3: event.target.option2_3.value, 
+        option2_4: event.target.option2_4.value
       }
     );
   }
@@ -26,7 +33,8 @@ function NewQuizForm(props){
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={addQuizToFirestore}
-        buttonText="Help!" />
+        buttonText="Create!"
+        quiz = {{}} />
     </React.Fragment>
   );
 }
